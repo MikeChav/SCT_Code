@@ -1,0 +1,18 @@
+This repository reproduces all the examples in the paper "Separating and 
+Collapsing Electoral Control Types" that were computer-generated.
+
+= Requirements =
+- A C++ compiler (e.g., GCC <http://gcc.gnu.org>)
+- Python 3 <https://www.python.org/>
+- Make (e.g., GNU Make <https://www.gnu.org/software/make/>)
+
+= Instructions =
+
+$ make all
+
+will reproduce all examples. These are stored as JSON files, each having a field 
+"V" that is a list of lists. Each list should be interpreted as a linear order 
+of the candidates, i.e., a vote.
+
+Sample files are provided in the examples folder, and each generated example
+should match the "C" and "V" fields of its corresponding sample file.
