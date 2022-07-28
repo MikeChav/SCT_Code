@@ -16,3 +16,20 @@ of the candidates, i.e., a vote.
 
 Sample files are provided in the examples folder, and each generated example
 should match the "C" and "V" fields of its corresponding sample file.
+
+= Checker =
+
+The Python script that generates the examples for plurality will output a 
+witness (a candidate and a partition of voters/candidates) for each control type 
+the election is found to belong to. In addition to that, we include a separate 
+checker that can read the JSON output of the Python generator plus zero or more 
+control types and outputs what candidates can witness membership in each control 
+type. The requirements to run this checker are:
+
+- Julia <https://julialang.org/>
+  - IterTools package
+  - JSON package
+
+An example run would be
+
+$ julia PluralityControl.jl <JSON file> CC-RPC-TP-UW CC-PC-TE-NUW
