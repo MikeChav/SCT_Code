@@ -1,4 +1,4 @@
-module PluralityControl
+module Control
 
 import IterTools
 import JSON
@@ -34,17 +34,43 @@ function plurality(C, V::Vector{Vector{Char}}, w::WinnerModel)
     return winners
 end
 
+
+function veto(C, V::Vector{Vector{Char}}, w::WinnerModel)
+    if length(C) == 0
+        return Vector{Char}()
+    end
+
+    scores = Dict{Char,Int}()
+
+    for c in C
+        scores[c] = length(V)
+    end
+
+    for v in V
+        scores[v[length(v)]] -= 1
+    end
+
+    maxscore = maximum(values(scores))
+    winners = [c for (c, s) in scores if s == maxscore]
+
+    if (w == UW) && (length(winners) > 1)
+        winners = Vector{Char}()
+    end
+
+    return winners
+end
+
 function maskVotes(C, V)
     return [[c for c in v if c in C] for v in V]
 end
 
-function pv(C, V::Vector{Vector{Char}}, ctype::ControlType, t::TieHandling, w::WinnerModel)
+function pv(E, C, V::Vector{Vector{Char}}, ctype::ControlType, t::TieHandling, w::WinnerModel)
     results = Dict{Char,Vector{Vector{Char}}}()
 
     for i in IterTools.subsets(eachindex(V))
-        w1 = plurality(C, V[i], (t == TE) ? UW : NUW)
-        w2 = plurality(C, V[setdiff(eachindex(V), i)], (t == TE) ? UW : NUW)
-        winners = plurality(∪(w1, w2), maskVotes(∪(w1, w2), V), w)
+        w1 = E(C, V[i], (t == TE) ? UW : NUW)
+        w2 = E(C, V[setdiff(eachindex(V), i)], (t == TE) ? UW : NUW)
+        winners = E(∪(w1, w2), maskVotes(∪(w1, w2), V), w)
 
         if ctype == CC
             for c in winners
@@ -62,13 +88,13 @@ function pv(C, V::Vector{Vector{Char}}, ctype::ControlType, t::TieHandling, w::W
     return results
 end
 
-function pc(C, V::Vector{Vector{Char}}, ctype::ControlType, t::TieHandling, w::WinnerModel)
+function pc(E, C, V::Vector{Vector{Char}}, ctype::ControlType, t::TieHandling, w::WinnerModel)
     results = Dict{Char,Vector{Char}}()
 
     for i in IterTools.subsets(eachindex(C))
-        w1 = plurality(C[i], maskVotes(C[i], V), (t == TE) ? UW : NUW)
+        w1 = E(C[i], maskVotes(C[i], V), (t == TE) ? UW : NUW)
         survived = ∪(C[setdiff(eachindex(C), i)], w1)
-        winners = plurality(survived, maskVotes(survived, V), w)
+        winners = E(survived, maskVotes(survived, V), w)
 
         if ctype == CC
             for c in winners
@@ -86,13 +112,13 @@ function pc(C, V::Vector{Vector{Char}}, ctype::ControlType, t::TieHandling, w::W
     return results
 end
 
-function rpc(C, V::Vector{Vector{Char}}, ctype::ControlType, t::TieHandling, w::WinnerModel)
+function rpc(E, C, V::Vector{Vector{Char}}, ctype::ControlType, t::TieHandling, w::WinnerModel)
     results = Dict{Char,Vector{Char}}()
 
     for i in IterTools.subsets(eachindex(C))
-        w1 = plurality(C[i], maskVotes(C[i], V), (t == TE) ? UW : NUW)
-        w2 = plurality(C[setdiff(eachindex(C), i)], maskVotes(C[setdiff(eachindex(C), i)], V), (t == TE) ? UW : NUW)
-        winners = plurality(∪(w1, w2), maskVotes(∪(w1, w2), V), w)
+        w1 = E(C[i], maskVotes(C[i], V), (t == TE) ? UW : NUW)
+        w2 = E(C[setdiff(eachindex(C), i)], maskVotes(C[setdiff(eachindex(C), i)], V), (t == TE) ? UW : NUW)
+        winners = E(∪(w1, w2), maskVotes(∪(w1, w2), V), w)
 
         if ctype == CC
             for c in winners
@@ -113,12 +139,22 @@ end
 tvote = JSON.parsefile(ARGS[1])
 C = [Char('`' + i) for i=1:tvote["C"]]
 V = Vector{Vector{Char}}()
+E= nothing
 
 for v in tvote["V"]
     push!(V, [i[1] for i in v])
 end
 
-for ctstr in ARGS[2:length(ARGS)]
+if lowercase(ARGS[2]) == "plurality"
+    E = plurality
+elseif lowercase(ARGS[2]) == "veto"
+    E = veto
+else
+    println(stderr, "This only checks plurality and veto")
+    exit(1)
+end
+
+for ctstr in ARGS[3:length(ARGS)]
     ctype = nothing
     f = nothing
     t = nothing
@@ -163,7 +199,7 @@ for ctstr in ARGS[2:length(ARGS)]
         continue
     end
 
-    println(ctstr, " ", keys(f(C, V, ctype, t, w)))
+    println(ctstr, " ", keys(f(E, C, V, ctype, t, w)))
 end
 
 end

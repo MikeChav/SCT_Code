@@ -21,9 +21,9 @@ running Linux 5.18.9 with 16 GB or RAM.
 
 = Checker =
 
-The Python script that generates the examples for plurality will output a 
-witness (a candidate and a partition of voters/candidates) for each control type 
-the election is found to belong to. In addition to that, we include a separate 
+The Python scripts that generate random examples will output a witness (a 
+candidate and a partition of voters/candidates) for each control type the 
+election is found to belong to. In addition to that, we include a separate 
 checker that can read the JSON output of the Python generator plus zero or more 
 control types and outputs what candidates can witness membership in each control 
 type. The requirements to run this checker are:
@@ -34,4 +34,4 @@ type. The requirements to run this checker are:
 
 An example run would be
 
-$ julia PluralityControl.jl <JSON file> CC-RPC-TP-UW CC-PC-TE-NUW
+$ julia Control.jl <plurality|veto> <JSON file> CC-RPC-TP-UW CC-PC-TE-NUW
