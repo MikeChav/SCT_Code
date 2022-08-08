@@ -138,11 +138,18 @@ end
 
 tvote = JSON.parsefile(ARGS[1])
 C = [Char('`' + i) for i=1:tvote["C"]]
+S = Vector{Char}([Char('`' + tvote["C"] + i) for i=1:tvote["S"]])
 V = Vector{Vector{Char}}()
+U = Vector{Vector{Char}}()
+k = tvote["k"]
 E= nothing
 
 for v in tvote["V"]
     push!(V, [i[1] for i in v])
+end
+
+for v in tvote["U"]
+    push!(U, [i[1] for i in v])
 end
 
 if lowercase(ARGS[2]) == "plurality"
