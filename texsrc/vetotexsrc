@@ -1,0 +1,43 @@
+Veto.1 & $\{a, b\}$ & - & $\{a>b, b>a\}$ & - & - \\
+Veto.2 & $\{a, b, c\}$ & - & $\{a>b>c, a>b>c\}$ & - & - \\
+Veto.3 & $\{a, b, c\}$ & - & $\{a>b>c, c>a>b, c>b>a, c>b>a\}$ & - & - \\
+Veto.4 & $\{a, b, c\}$ & - & $\{a>b>c\}$ & - & - \\
+Veto.5 & $\{a, b\}$ & - & $\{a>b\}$ & - & - \\
+Veto.6 & $\{a, b\}$ & - & $\{b>a\}$ & - & - \\
+Veto.7 & $\{a, b, c\}$ & - & $\{a>b>c, a>c>b, b>c>a, b>c>a\}$ & - & - \\
+Veto.8 & $\{a, b, c\}$ & - & $\{a>b>c, a>b>c, c>a>b, c>b>a, c>b>a\}$ & - & - \\
+Veto.9 & $\{a, b, c, d\}$ & - & $\{a>b>c>d, a>b>c>d, b>d>c>a\}$ & - & - \\
+Veto.10 & $\{a, b, c\}$ & - & $\{b>c>a, c>b>a\}$ & - & - \\
+Veto.11 & $\{a, b, c\}$ & - & $\{b>a>c\}$ & - & - \\
+Veto.12 & $\{a, b, c, d\}$ & - & $\{a>b>c>d, b>c>d>a, c>a>d>b\}$ & - & - \\
+Veto.13 & $\{a, b, c\}$ & - & $\{a>b>c, a>b>c, a>b>c, c>a>b, c>a>b, c>b>a, c>b>a\}$ & - & - \\
+Veto.14 & $\{a, b, c, d\}$ & - & $\{c>d>a>b, c>d>a>b, d>b>a>c\}$ & - & - \\
+Veto.15 & $\{a, b, c, d\}$ & - & $\{a>b>c>d, a>b>c>d, b>c>a>d, c>a>b>d, c>d>b>a\}$ & - & - \\
+Veto.16${}^\dagger$ & $\{a, b, c, d\}$ & - & $\{a>b>c>d, b>a>c>d, b>a>c>d, b>a>c>d, c>b>a>d, d>c>a>b, d>c>a>b, d>c>a>b, d>c>b>a, d>c>b>a\}$ & - & - \\
+Veto.17 & $\{a, b, c\}$ & - & $\{b>a>c, c>a>b\}$ & - & - \\
+Veto.18 & $\{a, b, c\}$ & - & $\{a>b>c, a>b>c, a>b>c, a>c>b, a>c>b, a>c>b, b>c>a, b>c>a\}$ & - & - \\
+Veto.19 & $\{a, b, c, d\}$ & - & $\{a>b>c>d, b>d>a>c, c>d>a>b\}$ & - & - \\
+Veto.20 & $\{a, b, c\}$ & - & $\{a>b>c, c>a>b\}$ & - & - \\
+Veto.21 & $\{a,b\}$ & $\{c\}$ & $\{b>a>c\}$ & - & 1 \\
+Veto.22 & $\{a,b,c\}$ & $\{d\}$ & $\{b>a>c>d\}$ & - & 1 \\
+Veto.23 & $\{a,b\}$ & $\{c\}$ & $\{a>b>c\}$ & - & 1 \\
+Veto.24 & $\{a,b\}$ & $\{c\}$ & $\{b>c>a,c>b>a\}$ & - & 1 \\
+Veto.25 & $\{a,b,c,d\}$ & - & $\{d>c>a>b\}$ & - & 1 \\
+Veto.26 & $\{a,b,c\}$ & - & $\{a>b>c, c>b>a\}$ & - & 1 \\
+Veto.27 & $\{a, b, c\}$ & - & $\{a>c>b, a>c>b\}$ & - & 1 \\
+Veto.28 & $\{a,b,c\}$ & - & $\{c>a>b, c>a>b\}$ & - & 1 \\
+Veto.29 & $\{a,b\}$ & - & $\{a>b\}$ & - & 1 \\
+Veto.30 & $\{a,b,c\}$ & - & $\{c>b>a, c>a>b, b>a>c\}$ & - & 1 \\
+Veto.31 & $\{a,b,c\}$ & - & $\{a>c>b, a>c>b, a>c>b, c>b>a, c>b>a\}$ & - & 1 \\
+Veto.32 & $\{a,b,c\}$ & - & $\{c>b>a, a>b>c, a>c>b\}$ & - & 2 \\
+Veto.33 & $\{a,b,c\}$ & - & $\{b>c>a, b>c>a, b>a>c, b>a>c, a>c>b\}$ & - & 2 \\
+Veto.34 & $\{a,b,c\}$ & - & $\{c>b>a, c>b>a, b>c>a\}$ & - & 1 \\
+Veto.35 & $\{a,b\}$ & - & $\{a>b\}$ & $\{a>b\}$ & 1 \\
+Veto.36 & $\{a,b,c\}$ & - & $\{c>a>b\}$ & $\{c>a>b\}$ & 1 \\
+Veto.37 & $\{a, b\}$ & - & $\{a>b\}$ & $\{a>b\}$ & 1 \\
+Veto.38 & $\{a, b\}$ & - & $\{b>a\}$ & $\{b>a\}$ & 1 \\
+Veto.39 & $\{a,b, c\}$ & $\{d\}$ & $\{d>c>a>b\}$ & - & - \\
+Veto.40 & $\{a,b\}$ & $\{c\}$ & $\{a>c>b, a>b>c\}$ & - & - \\
+Veto.41 & $\{a,b\}$ & $\{c\}$ & $\{c>b>a\}$ & - & -\\
+Veto.42 & $\{a, b, c\}$ & - & $\{a>b>c, a>c>b\}$ & - & - \\
+Veto.43${}^\dagger$ & $\{a,b,c,d\}$ & - & $\{c>d>b>a, a>b>c>d, b>d>a>c, b>d>c>a, a>b>d>c, a>b>d>c\}$ &- &- \\
