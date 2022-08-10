@@ -136,13 +136,117 @@ function rpc(E, C, V::Vector{Vector{Char}}, ctype::ControlType, t::TieHandling, 
     return results
 end
 
+function ac(E, C, S::Vector{Char}, V::Vector{Vector{Char}}, k, ctype::ControlType, w::WinnerModel)
+    results = Dict{Char,Vector{Char}}()
+
+    for i=0:k
+        for j in IterTools.subsets(eachindex(S), i)
+            winners = E(∪(C, S[j]), maskVotes(∪(C, S[j]), V), w)
+
+            if ctype == CC
+                for c in ∩(C, winners)
+                    results[c] = S[j]
+                end
+            elseif ctype == DC
+                losers = setdiff(C, winners)
+
+                for l in losers
+                    results[l] = S[j]
+                end
+            end
+        end
+    end
+
+    return results
+end
+
+function dc(E, C, V::Vector{Vector{Char}}, k, ctype::ControlType, w::WinnerModel)
+    results = Dict{Char,Vector{Char}}()
+
+    for i=length(C):-1:length(C) - k
+        for j in IterTools.subsets(eachindex(C), i)
+            winners = E(C[j], maskVotes(C[j], V), w)
+
+            if ctype == CC
+                for c in winners
+                    results[c] = C[setdiff(eachindex(C), j)]
+                end
+            elseif ctype == DC
+                losers = setdiff(C, winners)
+
+                for l in losers
+                    if !(l in C[setdiff(eachindex(C), j)])
+                        results[l] = C[setdiff(eachindex(C), j)]
+                    end
+                end
+            end
+        end
+    end
+
+    return results
+end
+
+function dv(E, C, V::Vector{Vector{Char}}, k, ctype::ControlType, w::WinnerModel)
+    results = Dict{Char,Vector{Vector{Char}}}()
+
+    for i=length(V):-1:length(V) - k
+        for j in IterTools.subsets(eachindex(V), i)
+            # Note this assumes all votes in V are subsets of C,
+            # otherwise we would use maskVotes
+            winners = E(C, V[j], w)
+
+            if ctype == CC
+                for c in winners
+                    results[c] = V[setdiff(eachindex(V), j)]
+                end
+            elseif ctype == DC
+                losers = setdiff(C, winners)
+
+                for l in losers
+                    results[l] = V[setdiff(eachindex(V), j)]
+                end
+            end
+        end
+    end
+
+    return results
+end
+
+function av(E, C, V::Vector{Vector{Char}}, U::Vector{Vector{Char}}, k, ctype::ControlType, w::WinnerModel)
+    results = Dict{Char, Vector{Vector{Char}}}()
+
+    for i=0:k
+        for j in IterTools.subsets(eachindex(U), i)
+            winners = E(C, ∪(V, U[j]), w)
+
+            if ctype == CC
+                for c in winners
+                    results[c] = U[j]
+                end
+            elseif ctype == DC
+                losers = setdiff(C, winners)
+
+                for l in losers
+                    results[l] = U[j]
+                end
+            end
+        end
+    end
+
+    return results
+end
+
+function uac(E, C, S, V::Vector{Vector{Char}}, ctype::ControlType, w::WinnerModel)
+    return ac(E, C, S, V, length(S), ctype, w)
+end
+
 tvote = JSON.parsefile(ARGS[1])
 C = [Char('`' + i) for i=1:tvote["C"]]
-S = Vector{Char}([Char('`' + tvote["C"] + i) for i=1:tvote["S"]])
 V = Vector{Vector{Char}}()
+S = Vector{Char}([Char('`' + length(C) + i) for i=1:tvote["S"]])
 U = Vector{Vector{Char}}()
 k = tvote["k"]
-E= nothing
+E = nothing
 
 for v in tvote["V"]
     push!(V, [i[1] for i in v])
@@ -183,30 +287,57 @@ for ctstr in ARGS[3:length(ARGS)]
         f = pc
     elseif ctypeparts[2] == "RPC"
         f = rpc
+    elseif ctypeparts[2] == "AC"
+        f = ac
+    elseif ctypeparts[2] == "DC"
+        f = dc
+    elseif ctypeparts[2] == "DV"
+        f = dv
+    elseif ctypeparts[2] == "AV"
+        f = av
+    elseif ctypeparts[2] == "UAC"
+        f = uac
     else
         println(stderr, "Unrecognized control type ", ctypeparts[2], ", skipping")
         continue
     end
 
-    if ctypeparts[3] == "TP"
-        t = TP
-    elseif ctypeparts[3] == "TE"
-        t = TE
-    else
-        println(stderr, "Unrecognized tie-handling protocol ", ctypeparts[3], ", skipping")
-        continue
+    if length(ctypeparts) == 4
+        if ctypeparts[3] == "TP"
+            t = TP
+        elseif ctypeparts[3] == "TE"
+            t = TE
+        else
+            println(stderr, "Unrecognized tie-handling protocol ", ctypeparts[3], ", skipping")
+            continue
+        end
     end
 
-    if ctypeparts[4] == "UW"
+    if ctypeparts[length(ctypeparts)] == "UW"
         w = UW
-    elseif ctypeparts[4] == "NUW"
+    elseif ctypeparts[length(ctypeparts)] == "NUW"
         w = NUW
     else
-        println(stderr, "Unrecognized winner model ", ctypeparts[4], ", skipping")
+        println(stderr, "Unrecognized winner model ", ctypeparts[length(ctypeparts)], ", skipping")
         continue
     end
 
-    println(ctstr, " ", keys(f(E, C, V, ctype, t, w)))
+    if !isnothing(t)
+        # Type 1
+        println(ctstr, " ", keys(f(E, C, V, ctype, t, w)))
+    elseif ctypeparts[2] == "AC"
+        # Type 2
+        println(ctstr, " ", keys(f(E, C, S, V, k, ctype, w)))
+    elseif ctypeparts[2] in ("DC", "DV")
+        # Type 3
+        println(ctstr, " ", keys(f(E, C, V, k, ctype, w)))
+    elseif ctypeparts[2] == "AV"
+        # Type 4
+        println(ctstr, " ", keys(f(E, C, V, U, k, ctype, w)))
+    elseif ctypeparts[2] == "UAC"
+        # Type 5
+        println(ctstr, " ", keys(f(E, C, S, V, ctype, w)))
+    end
 end
 
 end
