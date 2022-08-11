@@ -60,6 +60,33 @@ function veto(C, V::Vector{Vector{Char}}, w::WinnerModel)
     return winners
 end
 
+function approval(C, V::Vector{Vector{Char}}, w::WinnerModel)
+    if length(C) == 0
+        return Vector{Char}()
+    end
+
+    scores = Dict{Char,Int}()
+
+    for c in C
+        scores[c] = 0
+    end
+
+    for v in V
+        for c in v
+            scores[c] += 1
+        end
+    end
+
+    maxscore = maximum(values(scores))
+    winners = [c for (c, s) in scores if s == maxscore]
+
+    if (w == UW) && (length(winners) > 1)
+        winners = Vector{Char}()
+    end
+
+    return winners
+end
+
 function maskVotes(C, V)
     return [[c for c in v if c in C] for v in V]
 end
@@ -336,8 +363,10 @@ if abspath(PROGRAM_FILE) == @__FILE__
         E = Control.plurality
     elseif lowercase(ARGS[2]) == "veto"
         E = Control.veto
+    elseif lowercase(ARGS[2]) == "approval"
+        E = Control.approval
     else
-        println(stderr, "This only checks plurality and veto")
+        println(stderr, "This only checks plurality, veto and approval")
         exit(1)
     end
 
