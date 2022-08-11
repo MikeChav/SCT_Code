@@ -43,5 +43,5 @@ To aid us in the verification of human-generated examples, we wrote a script
 that takes as input our examples in JSON format. To generate those JSON files, 
 make sure that the following two directories are present: 
 (1) `texsrc` and (2) `jsons_of_examples`.
-Then to generate them, simply run the script `latex_to_json.py` using Pyhton 3.
+Then to generate them, simply run the script `latex_to_json.py` using Python 3.
 
