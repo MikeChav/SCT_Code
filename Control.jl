@@ -240,32 +240,7 @@ function uac(E, C, S, V::Vector{Vector{Char}}, ctype::ControlType, w::WinnerMode
     return ac(E, C, S, V, length(S), ctype, w)
 end
 
-tvote = JSON.parsefile(ARGS[1])
-C = [Char('`' + i) for i=1:tvote["C"]]
-V = Vector{Vector{Char}}()
-S = Vector{Char}([Char('`' + length(C) + i) for i=1:tvote["S"]])
-U = Vector{Vector{Char}}()
-k = tvote["k"]
-E = nothing
-
-for v in tvote["V"]
-    push!(V, [i[1] for i in v])
-end
-
-for v in tvote["U"]
-    push!(U, [i[1] for i in v])
-end
-
-if lowercase(ARGS[2]) == "plurality"
-    E = plurality
-elseif lowercase(ARGS[2]) == "veto"
-    E = veto
-else
-    println(stderr, "This only checks plurality and veto")
-    exit(1)
-end
-
-for ctstr in ARGS[3:length(ARGS)]
+function test_control(ctstr, E, C, S, V, U, k)
     ctype = nothing
     f = nothing
     t = nothing
@@ -278,7 +253,7 @@ for ctstr in ARGS[3:length(ARGS)]
         ctype = DC
     else
         println(stderr, "Unrecognized control type ", ctypeparts[1], ", skipping")
-        continue
+        return
     end
 
     if ctypeparts[2] == "PV"
@@ -299,7 +274,7 @@ for ctstr in ARGS[3:length(ARGS)]
         f = uac
     else
         println(stderr, "Unrecognized control type ", ctypeparts[2], ", skipping")
-        continue
+        return
     end
 
     if length(ctypeparts) == 4
@@ -309,7 +284,7 @@ for ctstr in ARGS[3:length(ARGS)]
             t = TE
         else
             println(stderr, "Unrecognized tie-handling protocol ", ctypeparts[3], ", skipping")
-            continue
+            return
         end
     end
 
@@ -319,24 +294,55 @@ for ctstr in ARGS[3:length(ARGS)]
         w = NUW
     else
         println(stderr, "Unrecognized winner model ", ctypeparts[length(ctypeparts)], ", skipping")
-        continue
+        return
     end
 
     if !isnothing(t)
         # Type 1
-        println(ctstr, " ", keys(f(E, C, V, ctype, t, w)))
+        return f(E, C, V, ctype, t, w)
     elseif ctypeparts[2] == "AC"
         # Type 2
-        println(ctstr, " ", keys(f(E, C, S, V, k, ctype, w)))
+        return f(E, C, S, V, k, ctype, w)
     elseif ctypeparts[2] in ("DC", "DV")
         # Type 3
-        println(ctstr, " ", keys(f(E, C, V, k, ctype, w)))
+        return f(E, C, V, k, ctype, w)
     elseif ctypeparts[2] == "AV"
         # Type 4
-        println(ctstr, " ", keys(f(E, C, V, U, k, ctype, w)))
+        return f(E, C, V, U, k, ctype, w)
     elseif ctypeparts[2] == "UAC"
         # Type 5
-        println(ctstr, " ", keys(f(E, C, S, V, ctype, w)))
+        return f(E, C, S, V, ctype, w)
+    end
+end
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    tvote = JSON.parsefile(ARGS[1])
+    C = [Char('`' + i) for i=1:tvote["C"]]
+    V = Vector{Vector{Char}}()
+    S = Vector{Char}([Char('`' + length(C) + i) for i=1:tvote["S"]])
+    U = Vector{Vector{Char}}()
+    k = tvote["k"]
+    E = nothing
+
+    for v in tvote["V"]
+        push!(V, [i[1] for i in v])
+    end
+
+    for v in tvote["U"]
+        push!(U, [i[1] for i in v])
+    end
+
+    if lowercase(ARGS[2]) == "plurality"
+        E = Control.plurality
+    elseif lowercase(ARGS[2]) == "veto"
+        E = Control.veto
+    else
+        println(stderr, "This only checks plurality and veto")
+        exit(1)
+    end
+
+    for ctstr in ARGS[3:length(ARGS)]
+        println(ctstr, " ", keys(Control.test_control(ctstr, E, C, S, V, U, k)))
     end
 end
 
