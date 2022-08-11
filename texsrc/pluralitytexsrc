@@ -1,8 +1,8 @@
 Plur.1 & $\{a, b, c\}$ & - & $\{a>b>c, b>a>c, c>a>b\}$ & - & - \\
 Plur.2 & $\{a, b\}$ & - & $\{a>b, b>a\}$ & - & - \\
 Plur.3 & $\{a, b\}$ & - & $\{a>b\}$ & - & - \\
-Plur.4 & $\{a,b,c\}$ & - & $\{a>b>c, a>b>c, a>b>c, a>b>c, b>a>c, b>a>c, b>a>c, c>a>b, c>a>b, c>a>b\}$ & - & - \\
-Plur.5 &  & - &  & - & - \\
+Plur.4${}^\dagger$ & $\{a,b,c, d\}$ & - & $\{b>c>d>a, d>a>c>b, b>c>d>a, a>c>b>d, a>b>d>c, d>a>b>c, c>d>b>a, d>a>c>b, a>c>b>d, d>c>b>a, b>c>d>a, a>b>d>c, d>b>c>a, a>d>c>b, b>c>d>a, c>a>b>d, b>a>d>c, a>c>d>b\}$ & - & - \\
+Plur.5 & $\{a,b,c\}$ & - & $\{a>b>c,a>b>c,a>c>b,a>c>b, b>a>c,b>a>c,b>a>c, c>a>b,c>a>b,c>a>b\}$ & - & -\\
 Plur.6 & $\{a, b, c\}$ & - & $\{b>c>a, c>b>a\}$ & - & - \\
 Plur.7 & $\{a, b, c, d\}$ & - & $\{a>b>c>d, c>d>a>b, d>b>a>c\}$ & - & - \\
 Plur.8 & $\{a, b, c\}$ & - & $\{a>b>c, a>b>c, b>a>c, b>a>c, c>b>a\}$ & - & - \\
@@ -48,4 +48,3 @@ Plur.47${}^\dagger$ & $\{a,b,c,d\}$ & - & $\{c>b>a>d, d>c>a>b, b>a>d>c, c>b>d>a,
 Plur.48${}^\dagger$ & $\{a,b,c,d,e\}$ & - & $\{a>c>b>d>e, d>c>b>a>e, c>d>b>e>a, e>d>b>a>c, a>d>b>e>c, b>e>d>a>c, a>d>e>b>c, e>d>a>b>c, c>a>e>d>b, b>e>d>a>c, d>c>e>b>a\}$ & - & - \\
 Plur.49${}^\dagger$ & $\{a,b,c,d\}$ & - & $\{c>a>b>d, b>a>c>d, c>b>a>d, b>d>c>a, d>a>b>c, c>b>d>a, a>d>b>c, a>b>d>c, c>d>a>b\}$ & - & - \\
 Plur.50${}^\dagger$ & $\{a,b,c,d,e\}$ & - & $\{a>d>e>b>c, e>c>b>a>d, c>b>a>e>d, e>a>d>b>c, b>d>a>e>c, e>a>b>d>c, b>c>e>a>d, d>c>b>a>e, d>c>b>a>e\}$ & - & - \\
-Plur.51 & $\{a,b,c\}$ & - & $\{a>b>c,a>b>c,a>c>b,a>c>b, b>a>c,b>a>c,b>a>c, c>a>b,c>a>b,c>a>b\}$ & - & -\\

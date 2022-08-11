@@ -1,0 +1,672 @@
+\begin{longtable}{|c|c|c|c|}
+\caption{\normalsize Table of separations and collapses
+(here denoted by EQ) in approval voting. The Classification column partitions each separation into
+one of the three cases, $\subsetneq$, $\supsetneq$, and INCOMP\@.
+(For cases of INCOMP for which we happen to have established that the
+separation holds with strong incomparability, we have noted that with a
+``$*$'' superscript.)\label{table:approval-results}}\\
+\hline
+$\calt$&$\calt'$&Classification&Justification(s)\\
+\endfirsthead
+\hline
+$\calt$&$\calt'$&Classification&Justification(s)\\
+\endhead
+\hline
+CC-PV-TE-UW&CC-PV-TE-NUW&$\subsetneq$&Appr.2 \\
+\hline
+CC-PV-TE-UW&CC-PV-TP-UW&$\supsetneq$&Appr.5 + Theorem~\ref{t:av-pv-tp-uw-in-te-uw}\\
+\hline
+CC-PV-TE-UW&CC-PV-TP-NUW&INCOMP&Appr.2 + Appr.5\\
+\hline
+CC-PV-TE-UW&{\approvalclasssix \textbf{CC-RPC-TE-UW}}&INCOMP&Appr.6 + Appr.9\\
+\hline
+CC-PV-TE-UW&{\approvalclassseven \textbf{CC-RPC-TE-NUW}}&INCOMP&Appr.2 + Appr.6\\
+\hline
+CC-PV-TE-UW&{\approvalclassfour \textbf{CC-RPC-TP-UW}}&$\supsetneq$&Appr.5 + Corollary~\ref{c:av-cc-uw-containments}\\
+\hline
+CC-PV-TE-UW&{\approvalclassfive \textbf{CC-RPC-TP-NUW}}&INCOMP&Appr.2 + Appr.5\\
+\hline
+CC-PV-TE-UW&{\approvalclasssix CC-PC-TE-UW}&INCOMP&Appr.6 + Appr.9\\
+\hline
+CC-PV-TE-UW&{\approvalclassseven CC-PC-TE-NUW}&INCOMP&Appr.2 + Appr.6\\
+\hline
+CC-PV-TE-UW&{\approvalclassfour CC-PC-TP-UW}&$\supsetneq$&Appr.5 + Corollary~\ref{c:av-cc-uw-containments}\\
+\hline
+CC-PV-TE-UW&{\approvalclassfive CC-PC-TP-NUW}&INCOMP&Appr.2 + Appr.5\\
+\hline
+CC-PV-TE-UW&{\approvalclassone DC-PV-TE-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+CC-PV-TE-UW&{\approvalclassone \textbf{DC-PV-TE-NUW}}&INCOMP${}^*$&Appr.1\\
+\hline
+CC-PV-TE-UW&DC-PV-TP-UW&INCOMP${}^*$&Appr.1\\
+\hline
+CC-PV-TE-UW&DC-PV-TP-NUW&INCOMP${}^*$&Appr.1\\
+\hline
+CC-PV-TE-UW&{\approvalclasstwo DC-RPC-TE-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+CC-PV-TE-UW&{\approvalclasstwo \textbf{DC-RPC-TE-NUW}}&INCOMP${}^*$&Appr.1\\
+\hline
+CC-PV-TE-UW&{\approvalclasstwo DC-RPC-TP-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+CC-PV-TE-UW&{\approvalclassthree \textbf{DC-RPC-TP-NUW}}&INCOMP${}^*$&Appr.1\\
+\hline
+CC-PV-TE-UW&{\approvalclasstwo DC-PC-TE-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+CC-PV-TE-UW&{\approvalclasstwo DC-PC-TE-NUW}&INCOMP${}^*$&Appr.1\\
+\hline
+CC-PV-TE-UW&{\approvalclasstwo DC-PC-TP-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+CC-PV-TE-UW&{\approvalclassthree DC-PC-TP-NUW}&INCOMP${}^*$&Appr.1\\
+\hline
+CC-PV-TE-NUW&CC-PV-TP-UW&$\supsetneq$&Appr.2 + Corollary~\ref{c:av-pv-tp-uw-in-te-nuw}\\
+\hline
+CC-PV-TE-NUW&CC-PV-TP-NUW&INCOMP${}^*$&Appr.5\\
+\hline
+CC-PV-TE-NUW&{\approvalclasssix \textbf{CC-RPC-TE-UW}}&INCOMP&Appr.2 + Appr.9\\
+\hline
+CC-PV-TE-NUW&{\approvalclassseven \textbf{CC-RPC-TE-NUW}}&INCOMP&Appr.6 + Appr.5\\
+\hline
+CC-PV-TE-NUW&{\approvalclassfour \textbf{CC-RPC-TP-UW}}&$\supsetneq$&Appr.2 + Corollary~\ref{c:av-cc-uw-containments}\\
+\hline
+CC-PV-TE-NUW&{\approvalclassfive \textbf{CC-RPC-TP-NUW}}&INCOMP${}^*$&Appr.5\\
+\hline
+CC-PV-TE-NUW&{\approvalclasssix CC-PC-TE-UW}&INCOMP&Appr.2 + Appr.9\\
+\hline
+CC-PV-TE-NUW&{\approvalclassseven CC-PC-TE-NUW}&INCOMP&Appr.6 + Appr.5\\
+\hline
+CC-PV-TE-NUW&{\approvalclassfour CC-PC-TP-UW}&$\supsetneq$&Appr.2 + Corollary~\ref{c:av-cc-uw-containments}\\
+\hline
+CC-PV-TE-NUW&{\approvalclassfive CC-PC-TP-NUW}&INCOMP${}^*$&Appr.5\\
+\hline
+CC-PV-TE-NUW&{\approvalclassone DC-PV-TE-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+CC-PV-TE-NUW&{\approvalclassone \textbf{DC-PV-TE-NUW}}&INCOMP${}^*$&Appr.1\\
+\hline
+CC-PV-TE-NUW&DC-PV-TP-UW&INCOMP${}^*$&Appr.1\\
+\hline
+CC-PV-TE-NUW&DC-PV-TP-NUW&INCOMP${}^*$&Appr.1\\
+\hline
+CC-PV-TE-NUW&{\approvalclasstwo DC-RPC-TE-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+CC-PV-TE-NUW&{\approvalclasstwo \textbf{DC-RPC-TE-NUW}}&INCOMP${}^*$&Appr.1\\
+\hline
+CC-PV-TE-NUW&{\approvalclasstwo DC-RPC-TP-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+CC-PV-TE-NUW&{\approvalclassthree \textbf{DC-RPC-TP-NUW}}&INCOMP${}^*$&Appr.1\\
+\hline
+CC-PV-TE-NUW&{\approvalclasstwo DC-PC-TE-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+CC-PV-TE-NUW&{\approvalclasstwo DC-PC-TE-NUW}&INCOMP${}^*$&Appr.1\\
+\hline
+CC-PV-TE-NUW&{\approvalclasstwo DC-PC-TP-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+CC-PV-TE-NUW&{\approvalclassthree DC-PC-TP-NUW}&INCOMP${}^*$&Appr.1\\
+\hline
+CC-PV-TP-UW&CC-PV-TP-NUW&$\subsetneq$&Appr.2 \\
+\hline
+CC-PV-TP-UW&{\approvalclasssix \textbf{CC-RPC-TE-UW}}&INCOMP&Appr.5 + Appr.8\\
+\hline
+CC-PV-TP-UW&{\approvalclassseven \textbf{CC-RPC-TE-NUW}}&INCOMP&Appr.2 + Appr.8\\
+\hline
+CC-PV-TP-UW&{\approvalclassfour \textbf{CC-RPC-TP-UW}}&$\supsetneq$&Appr.7 + Corollary~\ref{c:av-cc-uw-containments}\\
+\hline
+CC-PV-TP-UW&{\approvalclassfive \textbf{CC-RPC-TP-NUW}}&INCOMP&Appr.2 + Appr.8\\
+\hline
+CC-PV-TP-UW&{\approvalclasssix CC-PC-TE-UW}&INCOMP&Appr.5 + Appr.8\\
+\hline
+CC-PV-TP-UW&{\approvalclassseven CC-PC-TE-NUW}&INCOMP&Appr.2 + Appr.8\\
+\hline
+CC-PV-TP-UW&{\approvalclassfour CC-PC-TP-UW}&$\supsetneq$&Appr.7 + Corollary~\ref{c:av-cc-uw-containments}\\
+\hline
+CC-PV-TP-UW&{\approvalclassfive CC-PC-TP-NUW}&INCOMP&Appr.2 + Appr.8\\
+\hline
+CC-PV-TP-UW&{\approvalclassone DC-PV-TE-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+CC-PV-TP-UW&{\approvalclassone \textbf{DC-PV-TE-NUW}}&INCOMP${}^*$&Appr.1\\
+\hline
+CC-PV-TP-UW&DC-PV-TP-UW&INCOMP${}^*$&Appr.1\\
+\hline
+CC-PV-TP-UW&DC-PV-TP-NUW&INCOMP${}^*$&Appr.1\\
+\hline
+CC-PV-TP-UW&{\approvalclasstwo DC-RPC-TE-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+CC-PV-TP-UW&{\approvalclasstwo \textbf{DC-RPC-TE-NUW}}&INCOMP${}^*$&Appr.1\\
+\hline
+CC-PV-TP-UW&{\approvalclasstwo DC-RPC-TP-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+CC-PV-TP-UW&{\approvalclassthree \textbf{DC-RPC-TP-NUW}}&INCOMP${}^*$&Appr.1\\
+\hline
+CC-PV-TP-UW&{\approvalclasstwo DC-PC-TE-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+CC-PV-TP-UW&{\approvalclasstwo DC-PC-TE-NUW}&INCOMP${}^*$&Appr.1\\
+\hline
+CC-PV-TP-UW&{\approvalclasstwo DC-PC-TP-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+CC-PV-TP-UW&{\approvalclassthree DC-PC-TP-NUW}&INCOMP${}^*$&Appr.1\\
+\hline
+CC-PV-TP-NUW&{\approvalclasssix \textbf{CC-RPC-TE-UW}}&INCOMP&Appr.2 + Appr.5\\
+\hline
+CC-PV-TP-NUW&{\approvalclassseven \textbf{CC-RPC-TE-NUW}}&INCOMP&Appr.5 + Appr.8\\
+\hline
+CC-PV-TP-NUW&{\approvalclassfour \textbf{CC-RPC-TP-UW}}&$\supsetneq$&Appr.2 + Corollary~\ref{c:av-cc-uw-containments}\\
+\hline
+CC-PV-TP-NUW&{\approvalclassfive \textbf{CC-RPC-TP-NUW}}&$\supsetneq$&Appr.7 + Corollary~\ref{c:av-cc-nuw-containments}\\
+\hline
+CC-PV-TP-NUW&{\approvalclasssix CC-PC-TE-UW}&INCOMP&Appr.2 + Appr.5\\
+\hline
+CC-PV-TP-NUW&{\approvalclassseven CC-PC-TE-NUW}&INCOMP&Appr.5 + Appr.8\\
+\hline
+CC-PV-TP-NUW&{\approvalclassfour CC-PC-TP-UW}&$\supsetneq$&Appr.2 + Corollary~\ref{c:av-cc-uw-containments}\\
+\hline
+CC-PV-TP-NUW&{\approvalclassfive CC-PC-TP-NUW}&$\supsetneq$&Appr.7 + Corollary~\ref{c:av-cc-nuw-containments}\\
+\hline
+CC-PV-TP-NUW&{\approvalclassone DC-PV-TE-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+CC-PV-TP-NUW&{\approvalclassone \textbf{DC-PV-TE-NUW}}&INCOMP${}^*$&Appr.1\\
+\hline
+CC-PV-TP-NUW&DC-PV-TP-UW&INCOMP${}^*$&Appr.1\\
+\hline
+CC-PV-TP-NUW&DC-PV-TP-NUW&INCOMP${}^*$&Appr.1\\
+\hline
+CC-PV-TP-NUW&{\approvalclasstwo DC-RPC-TE-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+CC-PV-TP-NUW&{\approvalclasstwo \textbf{DC-RPC-TE-NUW}}&INCOMP${}^*$&Appr.1\\
+\hline
+CC-PV-TP-NUW&{\approvalclasstwo DC-RPC-TP-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+CC-PV-TP-NUW&{\approvalclassthree \textbf{DC-RPC-TP-NUW}}&INCOMP${}^*$&Appr.1\\
+\hline
+CC-PV-TP-NUW&{\approvalclasstwo DC-PC-TE-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+CC-PV-TP-NUW&{\approvalclasstwo DC-PC-TE-NUW}&INCOMP${}^*$&Appr.1\\
+\hline
+CC-PV-TP-NUW&{\approvalclasstwo DC-PC-TP-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+CC-PV-TP-NUW&{\approvalclassthree DC-PC-TP-NUW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclasssix \textbf{CC-RPC-TE-UW}}&{\approvalclassseven \textbf{CC-RPC-TE-NUW}}&$\subsetneq$&Appr.2 \\
+\hline
+{\approvalclasssix \textbf{CC-RPC-TE-UW}}&{\approvalclassfour \textbf{CC-RPC-TP-UW}}&$\supsetneq$&Appr.5 + Corollary~\ref{c:av-cc-uw-containments}\\
+\hline
+{\approvalclasssix \textbf{CC-RPC-TE-UW}}&{\approvalclassfive \textbf{CC-RPC-TP-NUW}}&INCOMP&Appr.2 + Appr.5\\
+\hline
+{\approvalclasssix \textbf{CC-RPC-TE-UW}}&{\approvalclasssix
+CC-PC-TE-UW}&EQ&Corollary~\ref{c:av-cc-c-te-uw}\\
+\hline
+{\approvalclasssix \textbf{CC-RPC-TE-UW}}&{\approvalclassseven CC-PC-TE-NUW}&$\subsetneq$&Appr.2 \\
+\hline
+{\approvalclasssix \textbf{CC-RPC-TE-UW}}&{\approvalclassfour CC-PC-TP-UW}&$\supsetneq$&Appr.5 + Corollary~\ref{c:av-cc-uw-containments}\\
+\hline
+{\approvalclasssix \textbf{CC-RPC-TE-UW}}&{\approvalclassfive CC-PC-TP-NUW}&INCOMP&Appr.2 + Appr.5\\
+\hline
+{\approvalclasssix \textbf{CC-RPC-TE-UW}}&{\approvalclassone DC-PV-TE-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclasssix \textbf{CC-RPC-TE-UW}}&{\approvalclassone \textbf{DC-PV-TE-NUW}}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclasssix \textbf{CC-RPC-TE-UW}}&DC-PV-TP-UW&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclasssix \textbf{CC-RPC-TE-UW}}&DC-PV-TP-NUW&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclasssix \textbf{CC-RPC-TE-UW}}&{\approvalclasstwo DC-RPC-TE-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclasssix \textbf{CC-RPC-TE-UW}}&{\approvalclasstwo \textbf{DC-RPC-TE-NUW}}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclasssix \textbf{CC-RPC-TE-UW}}&{\approvalclasstwo DC-RPC-TP-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclasssix \textbf{CC-RPC-TE-UW}}&{\approvalclassthree \textbf{DC-RPC-TP-NUW}}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclasssix \textbf{CC-RPC-TE-UW}}&{\approvalclasstwo DC-PC-TE-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclasssix \textbf{CC-RPC-TE-UW}}&{\approvalclasstwo DC-PC-TE-NUW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclasssix \textbf{CC-RPC-TE-UW}}&{\approvalclasstwo DC-PC-TP-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclasssix \textbf{CC-RPC-TE-UW}}&{\approvalclassthree DC-PC-TP-NUW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassseven \textbf{CC-RPC-TE-NUW}}&{\approvalclassfour \textbf{CC-RPC-TP-UW}}&$\supsetneq$&Appr.2 + Corollary~\ref{c:av-cc-uw-containments} \\
+\hline
+{\approvalclassseven \textbf{CC-RPC-TE-NUW}}&{\approvalclassfive \textbf{CC-RPC-TP-NUW}}&$\supsetneq$&Appr.5 + Corollary~\ref{c:av-cc-nuw-containments}\\
+\hline
+{\approvalclassseven \textbf{CC-RPC-TE-NUW}}&{\approvalclasssix CC-PC-TE-UW}&$\supsetneq$&Appr.2 \\
+\hline
+{\approvalclassseven \textbf{CC-RPC-TE-NUW}}&{\approvalclassseven CC-PC-TE-NUW}&EQ&Theorem~\ref{t:av-cc-c-te-nuw}\\
+\hline
+{\approvalclassseven \textbf{CC-RPC-TE-NUW}}&{\approvalclassfour CC-PC-TP-UW}&$\supsetneq$&Appr.2 + Corollary~\ref{c:av-cc-uw-containments} \\
+\hline
+{\approvalclassseven \textbf{CC-RPC-TE-NUW}}&{\approvalclassfive CC-PC-TP-NUW}&$\supsetneq$&Appr.5 + Corollary~\ref{c:av-cc-nuw-containments}\\
+\hline
+{\approvalclassseven \textbf{CC-RPC-TE-NUW}}&{\approvalclassone DC-PV-TE-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassseven \textbf{CC-RPC-TE-NUW}}&{\approvalclassone \textbf{DC-PV-TE-NUW}}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassseven \textbf{CC-RPC-TE-NUW}}&DC-PV-TP-UW&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassseven \textbf{CC-RPC-TE-NUW}}&DC-PV-TP-NUW&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassseven \textbf{CC-RPC-TE-NUW}}&{\approvalclasstwo DC-RPC-TE-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassseven \textbf{CC-RPC-TE-NUW}}&{\approvalclasstwo \textbf{DC-RPC-TE-NUW}}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassseven \textbf{CC-RPC-TE-NUW}}&{\approvalclasstwo DC-RPC-TP-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassseven \textbf{CC-RPC-TE-NUW}}&{\approvalclassthree \textbf{DC-RPC-TP-NUW}}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassseven \textbf{CC-RPC-TE-NUW}}&{\approvalclasstwo DC-PC-TE-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassseven \textbf{CC-RPC-TE-NUW}}&{\approvalclasstwo DC-PC-TE-NUW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassseven \textbf{CC-RPC-TE-NUW}}&{\approvalclasstwo DC-PC-TP-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassseven \textbf{CC-RPC-TE-NUW}}&{\approvalclassthree DC-PC-TP-NUW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassfour \textbf{CC-RPC-TP-UW}}&{\approvalclassfive \textbf{CC-RPC-TP-NUW}}&$\subsetneq$&Appr.2 \\
+\hline
+{\approvalclassfour \textbf{CC-RPC-TP-UW}}&{\approvalclasssix CC-PC-TE-UW}&$\subsetneq$&Appr.5 + Corollary~\ref{c:av-cc-uw-containments}\\
+\hline
+{\approvalclassfour \textbf{CC-RPC-TP-UW}}&{\approvalclassseven CC-PC-TE-NUW}&$\subsetneq$&Appr.2 + Corollary~\ref{c:av-cc-uw-containments} \\
+\hline
+{\approvalclassfour \textbf{CC-RPC-TP-UW}}&{\approvalclassfour CC-PC-TP-UW}&EQ&Corollary~\ref{c:approval-axiomatic-results}\\
+\hline
+{\approvalclassfour \textbf{CC-RPC-TP-UW}}&{\approvalclassfive CC-PC-TP-NUW}&$\subsetneq$&Appr.2 \\
+\hline
+{\approvalclassfour \textbf{CC-RPC-TP-UW}}&{\approvalclassone DC-PV-TE-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassfour \textbf{CC-RPC-TP-UW}}&{\approvalclassone \textbf{DC-PV-TE-NUW}}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassfour \textbf{CC-RPC-TP-UW}}&DC-PV-TP-UW&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassfour \textbf{CC-RPC-TP-UW}}&DC-PV-TP-NUW&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassfour \textbf{CC-RPC-TP-UW}}&{\approvalclasstwo DC-RPC-TE-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassfour \textbf{CC-RPC-TP-UW}}&{\approvalclasstwo \textbf{DC-RPC-TE-NUW}}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassfour \textbf{CC-RPC-TP-UW}}&{\approvalclasstwo DC-RPC-TP-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassfour \textbf{CC-RPC-TP-UW}}&{\approvalclassthree \textbf{DC-RPC-TP-NUW}}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassfour \textbf{CC-RPC-TP-UW}}&{\approvalclasstwo DC-PC-TE-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassfour \textbf{CC-RPC-TP-UW}}&{\approvalclasstwo DC-PC-TE-NUW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassfour \textbf{CC-RPC-TP-UW}}&{\approvalclasstwo DC-PC-TP-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassfour \textbf{CC-RPC-TP-UW}}&{\approvalclassthree DC-PC-TP-NUW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassfive \textbf{CC-RPC-TP-NUW}}&{\approvalclasssix CC-PC-TE-UW}&INCOMP&Appr.2 + Appr.5\\
+\hline
+{\approvalclassfive \textbf{CC-RPC-TP-NUW}}&{\approvalclassseven CC-PC-TE-NUW}&$\subsetneq$&Appr.5 + Corollary~\ref{c:av-cc-nuw-containments}\\
+\hline
+{\approvalclassfive \textbf{CC-RPC-TP-NUW}}&{\approvalclassfour CC-PC-TP-UW}&$\supsetneq$&Appr.2 + Corollary~\ref{c:av-cc-nuw-containments} \\
+\hline
+{\approvalclassfive \textbf{CC-RPC-TP-NUW}}&{\approvalclassfive CC-PC-TP-NUW}&EQ&Corollary~\ref{c:approval-axiomatic-results}\\
+\hline
+{\approvalclassfive \textbf{CC-RPC-TP-NUW}}&{\approvalclassone DC-PV-TE-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassfive \textbf{CC-RPC-TP-NUW}}&{\approvalclassone \textbf{DC-PV-TE-NUW}}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassfive \textbf{CC-RPC-TP-NUW}}&DC-PV-TP-UW&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassfive \textbf{CC-RPC-TP-NUW}}&DC-PV-TP-NUW&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassfive \textbf{CC-RPC-TP-NUW}}&{\approvalclasstwo DC-RPC-TE-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassfive \textbf{CC-RPC-TP-NUW}}&{\approvalclasstwo \textbf{DC-RPC-TE-NUW}}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassfive \textbf{CC-RPC-TP-NUW}}&{\approvalclasstwo DC-RPC-TP-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassfive \textbf{CC-RPC-TP-NUW}}&{\approvalclassthree \textbf{DC-RPC-TP-NUW}}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassfive \textbf{CC-RPC-TP-NUW}}&{\approvalclasstwo DC-PC-TE-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassfive \textbf{CC-RPC-TP-NUW}}&{\approvalclasstwo DC-PC-TE-NUW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassfive \textbf{CC-RPC-TP-NUW}}&{\approvalclasstwo DC-PC-TP-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassfive \textbf{CC-RPC-TP-NUW}}&{\approvalclassthree DC-PC-TP-NUW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclasssix CC-PC-TE-UW}&{\approvalclassseven CC-PC-TE-NUW}&$\subsetneq$&Appr.2 \\
+\hline
+{\approvalclasssix CC-PC-TE-UW}&{\approvalclassfour CC-PC-TP-UW}&$\supsetneq$&Appr.5 + Corollary~\ref{c:av-cc-uw-containments}\\
+\hline
+{\approvalclasssix CC-PC-TE-UW}&{\approvalclassfive CC-PC-TP-NUW}&INCOMP&Appr.2 + Appr.5\\
+\hline
+{\approvalclasssix CC-PC-TE-UW}&{\approvalclassone DC-PV-TE-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclasssix CC-PC-TE-UW}&{\approvalclassone \textbf{DC-PV-TE-NUW}}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclasssix CC-PC-TE-UW}&DC-PV-TP-UW&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclasssix CC-PC-TE-UW}&DC-PV-TP-NUW&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclasssix CC-PC-TE-UW}&{\approvalclasstwo DC-RPC-TE-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclasssix CC-PC-TE-UW}&{\approvalclasstwo \textbf{DC-RPC-TE-NUW}}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclasssix CC-PC-TE-UW}&{\approvalclasstwo DC-RPC-TP-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclasssix CC-PC-TE-UW}&{\approvalclassthree \textbf{DC-RPC-TP-NUW}}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclasssix CC-PC-TE-UW}&{\approvalclasstwo DC-PC-TE-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclasssix CC-PC-TE-UW}&{\approvalclasstwo DC-PC-TE-NUW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclasssix CC-PC-TE-UW}&{\approvalclasstwo DC-PC-TP-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclasssix CC-PC-TE-UW}&{\approvalclassthree DC-PC-TP-NUW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassseven CC-PC-TE-NUW}&{\approvalclassfour CC-PC-TP-UW}&$\supsetneq$&Appr.2 + Corollary~\ref{c:av-cc-uw-containments} \\
+\hline
+{\approvalclassseven CC-PC-TE-NUW}&{\approvalclassfive CC-PC-TP-NUW}&$\supsetneq$&Appr.5 + Corollary~\ref{c:av-cc-nuw-containments}\\
+\hline
+{\approvalclassseven CC-PC-TE-NUW}&{\approvalclassone DC-PV-TE-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassseven CC-PC-TE-NUW}&{\approvalclassone \textbf{DC-PV-TE-NUW}}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassseven CC-PC-TE-NUW}&DC-PV-TP-UW&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassseven CC-PC-TE-NUW}&DC-PV-TP-NUW&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassseven CC-PC-TE-NUW}&{\approvalclasstwo DC-RPC-TE-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassseven CC-PC-TE-NUW}&{\approvalclasstwo \textbf{DC-RPC-TE-NUW}}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassseven CC-PC-TE-NUW}&{\approvalclasstwo DC-RPC-TP-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassseven CC-PC-TE-NUW}&{\approvalclassthree \textbf{DC-RPC-TP-NUW}}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassseven CC-PC-TE-NUW}&{\approvalclasstwo DC-PC-TE-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassseven CC-PC-TE-NUW}&{\approvalclasstwo DC-PC-TE-NUW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassseven CC-PC-TE-NUW}&{\approvalclasstwo DC-PC-TP-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassseven CC-PC-TE-NUW}&{\approvalclassthree DC-PC-TP-NUW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassfour CC-PC-TP-UW}&{\approvalclassfive CC-PC-TP-NUW}&$\subsetneq$&Appr.2 \\
+\hline
+{\approvalclassfour CC-PC-TP-UW}&{\approvalclassone DC-PV-TE-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassfour CC-PC-TP-UW}&{\approvalclassone \textbf{DC-PV-TE-NUW}}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassfour CC-PC-TP-UW}&DC-PV-TP-UW&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassfour CC-PC-TP-UW}&DC-PV-TP-NUW&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassfour CC-PC-TP-UW}&{\approvalclasstwo DC-RPC-TE-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassfour CC-PC-TP-UW}&{\approvalclasstwo \textbf{DC-RPC-TE-NUW}}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassfour CC-PC-TP-UW}&{\approvalclasstwo DC-RPC-TP-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassfour CC-PC-TP-UW}&{\approvalclassthree \textbf{DC-RPC-TP-NUW}}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassfour CC-PC-TP-UW}&{\approvalclasstwo DC-PC-TE-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassfour CC-PC-TP-UW}&{\approvalclasstwo DC-PC-TE-NUW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassfour CC-PC-TP-UW}&{\approvalclasstwo DC-PC-TP-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassfour CC-PC-TP-UW}&{\approvalclassthree DC-PC-TP-NUW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassfive CC-PC-TP-NUW}&{\approvalclassone DC-PV-TE-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassfive CC-PC-TP-NUW}&{\approvalclassone \textbf{DC-PV-TE-NUW}}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassfive CC-PC-TP-NUW}&DC-PV-TP-UW&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassfive CC-PC-TP-NUW}&DC-PV-TP-NUW&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassfive CC-PC-TP-NUW}&{\approvalclasstwo DC-RPC-TE-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassfive CC-PC-TP-NUW}&{\approvalclasstwo \textbf{DC-RPC-TE-NUW}}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassfive CC-PC-TP-NUW}&{\approvalclasstwo DC-RPC-TP-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassfive CC-PC-TP-NUW}&{\approvalclassthree \textbf{DC-RPC-TP-NUW}}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassfive CC-PC-TP-NUW}&{\approvalclasstwo DC-PC-TE-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassfive CC-PC-TP-NUW}&{\approvalclasstwo DC-PC-TE-NUW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassfive CC-PC-TP-NUW}&{\approvalclasstwo DC-PC-TP-UW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassfive CC-PC-TP-NUW}&{\approvalclassthree DC-PC-TP-NUW}&INCOMP${}^*$&Appr.1\\
+\hline
+{\approvalclassone DC-PV-TE-UW}&{\approvalclassone \textbf{DC-PV-TE-NUW}}&EQ&Theorem~\ref{t:av-dc-pv-te}\\
+\hline
+{\approvalclassone DC-PV-TE-UW}&DC-PV-TP-UW&$\supsetneq$&Appr.3 + Theorem~\ref{t:av-dcpvtpuw-in-dcpvtenuw}\\
+\hline
+{\approvalclassone DC-PV-TE-UW}&DC-PV-TP-NUW&$\supsetneq$&Appr.2 + Theorem~\ref{t:av-dcpvtpuw-in-dcpvtenuw}\\
+\hline
+{\approvalclassone DC-PV-TE-UW}&{\approvalclasstwo DC-RPC-TE-UW}&$\supsetneq$&Appr.3 + Corollary~\ref{c:approval-axiomatic-results} +
+Corollary~\ref{c:av-dcrpctenuw-in-dcpvtenuw}\\
+\hline
+{\approvalclassone DC-PV-TE-UW}&{\approvalclasstwo \textbf{DC-RPC-TE-NUW}}&$\supsetneq$&Appr.3 +
+Corollary~\ref{c:av-dcrpctenuw-in-dcpvtenuw}\\
+\hline
+{\approvalclassone DC-PV-TE-UW}&{\approvalclasstwo DC-RPC-TP-UW}&$\supsetneq$&Appr.3 +
+Theorem~\ref{t:approval-extend-to-6-collapse} + Corollaries~\ref{c:approval-axiomatic-results} and~\ref{c:av-dcrpctenuw-in-dcpvtenuw}\\
+\hline
+{\approvalclassone DC-PV-TE-UW}&{\approvalclassthree \textbf{DC-RPC-TP-NUW}}&$\supsetneq$&Appr.2 + Corollary~\ref{c:av-dcrpctenuw-in-dcpvtenuw} + Corollary~\ref{c:approval-axiomatic-results}\\
+\hline
+{\approvalclassone DC-PV-TE-UW}&{\approvalclasstwo DC-PC-TE-UW}&$\supsetneq$&Appr.3 + Corollary~\ref{c:approval-axiomatic-results} +
+Corollary~\ref{c:av-dcrpctenuw-in-dcpvtenuw}\\
+\hline
+{\approvalclassone DC-PV-TE-UW}&{\approvalclasstwo DC-PC-TE-NUW}&$\supsetneq$&Appr.3 + Corollary~\ref{c:approval-axiomatic-results} +
+Corollary~\ref{c:av-dcrpctenuw-in-dcpvtenuw}\\
+\hline
+{\approvalclassone DC-PV-TE-UW}&{\approvalclasstwo DC-PC-TP-UW}&$\supsetneq$&Appr.3 + Corollary~\ref{c:approval-axiomatic-results} +
+Corollary~\ref{c:av-dcrpctenuw-in-dcpvtenuw}\\
+\hline
+{\approvalclassone DC-PV-TE-UW}&{\approvalclassthree DC-PC-TP-NUW}&$\supsetneq$&Appr.2 + Corollary~\ref{c:av-dcrpctenuw-in-dcpvtenuw} + Corollary~\ref{c:approval-axiomatic-results}\\
+\hline
+{\approvalclassone \textbf{DC-PV-TE-NUW}}&DC-PV-TP-UW&$\supsetneq$&Appr.3 + Theorem~\ref{t:av-dcpvtpuw-in-dcpvtenuw}\\
+\hline
+{\approvalclassone \textbf{DC-PV-TE-NUW}}&DC-PV-TP-NUW&$\supsetneq$&Appr.2 + Theorem~\ref{t:av-dcpvtpuw-in-dcpvtenuw}\\
+\hline
+{\approvalclassone \textbf{DC-PV-TE-NUW}}&{\approvalclasstwo DC-RPC-TE-UW}&$\supsetneq$&Appr.3 + Corollary~\ref{c:av-dcrpctenuw-in-dcpvtenuw} + Corollary~\ref{c:approval-axiomatic-results}\\
+\hline
+{\approvalclassone \textbf{DC-PV-TE-NUW}}&{\approvalclasstwo \textbf{DC-RPC-TE-NUW}}&$\supsetneq$&Appr.3 + Corollary~\ref{c:av-dcrpctenuw-in-dcpvtenuw}\\
+\hline
+{\approvalclassone \textbf{DC-PV-TE-NUW}}&{\approvalclasstwo DC-RPC-TP-UW}&$\supsetneq$&Appr.3 + Corollaries~\ref{c:approval-axiomatic-results} and~\ref{c:av-dcrpctenuw-in-dcpvtenuw} + Theorem~\ref{t:approval-extend-to-6-collapse}\\
+\hline
+{\approvalclassone \textbf{DC-PV-TE-NUW}}&{\approvalclassthree \textbf{DC-RPC-TP-NUW}}&$\supsetneq$&Appr.2 + Corollary~\ref{c:av-dcrpctenuw-in-dcpvtenuw} + Corollary~\ref{c:approval-axiomatic-results}\\
+\hline
+{\approvalclassone \textbf{DC-PV-TE-NUW}}&{\approvalclasstwo DC-PC-TE-UW}&$\supsetneq$&Appr.3 + Corollary~\ref{c:av-dcrpctenuw-in-dcpvtenuw} + Corollary~\ref{c:approval-axiomatic-results}\\
+\hline
+{\approvalclassone \textbf{DC-PV-TE-NUW}}&{\approvalclasstwo DC-PC-TE-NUW}&$\supsetneq$&Appr.3 + Corollary~\ref{c:av-dcrpctenuw-in-dcpvtenuw} + Corollary~\ref{c:approval-axiomatic-results}\\
+\hline
+{\approvalclassone \textbf{DC-PV-TE-NUW}}&{\approvalclasstwo DC-PC-TP-UW}&$\supsetneq$&Appr.3 + Corollary~\ref{c:av-dcrpctenuw-in-dcpvtenuw} + Corollary~\ref{c:approval-axiomatic-results}\\
+\hline
+{\approvalclassone \textbf{DC-PV-TE-NUW}}&{\approvalclassthree DC-PC-TP-NUW}&$\supsetneq$&Appr.2 + Corollary~\ref{c:av-dcrpctenuw-in-dcpvtenuw} + Corollary~\ref{c:approval-axiomatic-results}\\
+\hline
+DC-PV-TP-UW&DC-PV-TP-NUW&$\supsetneq$&Appr.2 \\
+\hline
+DC-PV-TP-UW&{\approvalclasstwo DC-RPC-TE-UW}&$\supsetneq$&Appr.4 + Theorem~\ref{t:av-dcrpctenuw-in-dcpvtpuw} + Corollary~\ref{c:approval-axiomatic-results}\\
+\hline
+DC-PV-TP-UW&{\approvalclasstwo \textbf{DC-RPC-TE-NUW}}&$\supsetneq$&Appr.4 + Theorem~\ref{t:av-dcrpctenuw-in-dcpvtpuw}\\
+\hline
+DC-PV-TP-UW&{\approvalclasstwo DC-RPC-TP-UW}&$\supsetneq$&Appr.4 + Theorems~\ref{t:approval-extend-to-6-collapse} and~\ref{t:av-dcrpctenuw-in-dcpvtpuw}
++ Corollary~\ref{c:approval-axiomatic-results}\\
+\hline
+DC-PV-TP-UW&{\approvalclassthree \textbf{DC-RPC-TP-NUW}}&$\supsetneq$&Appr.2 + Corollary~\ref{c:av-cc-nuw-containments}\\
+\hline
+DC-PV-TP-UW&{\approvalclasstwo DC-PC-TE-UW}&$\supsetneq$&Appr.4 + Theorem~\ref{t:av-dcrpctenuw-in-dcpvtpuw} + Corollary~\ref{c:approval-axiomatic-results}\\
+\hline
+DC-PV-TP-UW&{\approvalclasstwo DC-PC-TE-NUW}&$\supsetneq$&Appr.4 + Theorem~\ref{t:av-dcrpctenuw-in-dcpvtpuw} + Corollary~\ref{c:approval-axiomatic-results}\\
+\hline
+DC-PV-TP-UW&{\approvalclasstwo DC-PC-TP-UW}&$\supsetneq$&Appr.4 + Theorem~\ref{t:av-dcrpctenuw-in-dcpvtpuw} + Corollary~\ref{c:approval-axiomatic-results}\\
+\hline
+DC-PV-TP-UW&{\approvalclassthree DC-PC-TP-NUW}&$\supsetneq$&Appr.2 + Corollary~\ref{c:av-cc-nuw-containments}\\
+\hline
+DC-PV-TP-NUW&{\approvalclasstwo DC-RPC-TE-UW}&INCOMP&Appr.2 + Appr.8\\
+\hline
+DC-PV-TP-NUW&{\approvalclasstwo \textbf{DC-RPC-TE-NUW}}&INCOMP&Appr.2 + Appr.8\\
+\hline
+DC-PV-TP-NUW&{\approvalclasstwo DC-RPC-TP-UW}&INCOMP&Appr.2 + Appr.8\\
+\hline
+DC-PV-TP-NUW&{\approvalclassthree \textbf{DC-RPC-TP-NUW}}&$\supsetneq$&Appr.4 + Theorem~\ref{t:general-containments} + Theorem~\ref{t:av-dcrpctenuw-in-dcpvtpuw}\\
+\hline
+DC-PV-TP-NUW&{\approvalclasstwo DC-PC-TE-UW}&INCOMP&Appr.2 + Appr.8\\
+\hline
+DC-PV-TP-NUW&{\approvalclasstwo DC-PC-TE-NUW}&INCOMP&Appr.2 + Appr.8\\
+\hline
+DC-PV-TP-NUW&{\approvalclasstwo DC-PC-TP-UW}&INCOMP&Appr.2 + Appr.8\\
+\hline
+DC-PV-TP-NUW&{\approvalclassthree DC-PC-TP-NUW}&$\supsetneq$&Appr.4 + Theorem~\ref{t:general-containments} + Theorem~\ref{t:av-dcrpctenuw-in-dcpvtpuw}\\
+\hline
+{\approvalclasstwo DC-RPC-TE-UW}&{\approvalclasstwo \textbf{DC-RPC-TE-NUW}}&EQ&Corollary~\ref{c:approval-axiomatic-results}\\
+\hline
+{\approvalclasstwo DC-RPC-TE-UW}&{\approvalclasstwo DC-RPC-TP-UW}&EQ&Corollary~\ref{c:approval-axiomatic-results} + Corollary~\ref{c:approval-axiomatic-results}\\
+\hline
+{\approvalclasstwo DC-RPC-TE-UW}&{\approvalclassthree \textbf{DC-RPC-TP-NUW}}&$\supsetneq$&Appr.2 + Theorem~\ref{t:general-containments}\\
+\hline
+{\approvalclasstwo DC-RPC-TE-UW}&{\approvalclasstwo DC-PC-TE-UW}&EQ&Corollary~\ref{c:approval-axiomatic-results}\\
+\hline
+{\approvalclasstwo DC-RPC-TE-UW}&{\approvalclasstwo DC-PC-TE-NUW}&EQ&Corollary~\ref{c:approval-axiomatic-results}\\
+\hline
+{\approvalclasstwo DC-RPC-TE-UW}&{\approvalclasstwo DC-PC-TP-UW}&EQ&Corollary~\ref{c:approval-axiomatic-results} + Corollary~\ref{c:approval-axiomatic-results}\\
+\hline
+{\approvalclasstwo DC-RPC-TE-UW}&{\approvalclassthree DC-PC-TP-NUW}&$\supsetneq$&Appr.2 + Theorem~\ref{t:general-containments}\\
+\hline
+{\approvalclasstwo \textbf{DC-RPC-TE-NUW}}&{\approvalclasstwo DC-RPC-TP-UW}&EQ&Corollary~\ref{c:approval-axiomatic-results}\\
+\hline
+{\approvalclasstwo \textbf{DC-RPC-TE-NUW}}&{\approvalclassthree \textbf{DC-RPC-TP-NUW}}&$\supsetneq$&Appr.2 + Theorem~\ref{t:general-containments}\\
+\hline
+{\approvalclasstwo \textbf{DC-RPC-TE-NUW}}&{\approvalclasstwo DC-PC-TE-UW}&EQ&Corollary~\ref{c:approval-axiomatic-results}\\
+\hline
+{\approvalclasstwo \textbf{DC-RPC-TE-NUW}}&{\approvalclasstwo DC-PC-TE-NUW}&EQ&Corollary~\ref{c:approval-axiomatic-results}\\
+\hline
+{\approvalclasstwo \textbf{DC-RPC-TE-NUW}}&{\approvalclasstwo DC-PC-TP-UW}&EQ&Corollary~\ref{c:approval-axiomatic-results}\\
+\hline
+{\approvalclasstwo \textbf{DC-RPC-TE-NUW}}&{\approvalclassthree DC-PC-TP-NUW}&$\supsetneq$&Appr.2 + Theorem~\ref{t:general-containments}\\
+\hline
+{\approvalclasstwo DC-RPC-TP-UW}&{\approvalclassthree \textbf{DC-RPC-TP-NUW}}&$\supsetneq$&Appr.2 \\
+\hline
+{\approvalclasstwo DC-RPC-TP-UW}&{\approvalclasstwo DC-PC-TE-UW}&EQ& Corollary~\ref{c:approval-axiomatic-results} +
+Theorem~\ref{t:approval-extend-to-6-collapse}\\
+\hline
+{\approvalclasstwo DC-RPC-TP-UW}&{\approvalclasstwo DC-PC-TE-NUW}&EQ&Corollary~\ref{c:approval-axiomatic-results} +
+Theorem~\ref{t:approval-extend-to-6-collapse}\\
+\hline
+{\approvalclasstwo DC-RPC-TP-UW}&{\approvalclasstwo DC-PC-TP-UW}&EQ&
+Theorem~\ref{t:approval-extend-to-6-collapse}\\
+\hline
+{\approvalclasstwo DC-RPC-TP-UW}&{\approvalclassthree DC-PC-TP-NUW}&$\supsetneq$&Appr.2 +
+Theorems~\ref{t:general-containments} and~\ref{t:approval-extend-to-6-collapse} +
+Corollary~\ref{c:approval-axiomatic-results}\\
+\hline
+{\approvalclassthree \textbf{DC-RPC-TP-NUW}}&{\approvalclasstwo DC-PC-TE-UW}&$\subsetneq$&Appr.2 + Theorem~\ref{t:general-containments} + Corollary~\ref{c:approval-axiomatic-results}\\
+\hline
+{\approvalclassthree \textbf{DC-RPC-TP-NUW}}&{\approvalclasstwo DC-PC-TE-NUW}&$\subsetneq$&Appr.2 + Theorem~\ref{t:general-containments} + Corollary~\ref{c:approval-axiomatic-results}\\
+\hline
+{\approvalclassthree \textbf{DC-RPC-TP-NUW}}&{\approvalclasstwo DC-PC-TP-UW}&$\subsetneq$&Appr.2 + Theorem~\ref{t:general-containments} + Corollary~\ref{c:approval-axiomatic-results}\\
+\hline
+{\approvalclassthree \textbf{DC-RPC-TP-NUW}}&{\approvalclassthree DC-PC-TP-NUW}&EQ&Corollary~\ref{c:approval-axiomatic-results}\\
+\hline
+{\approvalclasstwo DC-PC-TE-UW}&{\approvalclasstwo DC-PC-TE-NUW}&EQ&Corollary~\ref{c:approval-axiomatic-results}\\
+\hline
+{\approvalclasstwo DC-PC-TE-UW}&{\approvalclasstwo DC-PC-TP-UW}&EQ&Corollary~\ref{c:approval-axiomatic-results} + Corollary~\ref{c:approval-axiomatic-results}\\
+\hline
+{\approvalclasstwo DC-PC-TE-UW}&{\approvalclassthree DC-PC-TP-NUW}&$\supsetneq$&Appr.2 + Theorem~\ref{t:general-containments} + Corollary~\ref{c:approval-axiomatic-results}\\
+\hline
+{\approvalclasstwo DC-PC-TE-NUW}&{\approvalclasstwo DC-PC-TP-UW}&EQ&Corollary~\ref{c:approval-axiomatic-results} + Corollary~\ref{c:approval-axiomatic-results}\\
+\hline
+{\approvalclasstwo DC-PC-TE-NUW}&{\approvalclassthree DC-PC-TP-NUW}&$\supsetneq$&Appr.2 + Theorem~\ref{t:general-containments} + Corollary~\ref{c:approval-axiomatic-results}\\
+\hline
+{\approvalclasstwo DC-PC-TP-UW}&{\approvalclassthree DC-PC-TP-NUW}&$\supsetneq$&Appr.2\\
+\hline
+CC-AC-UW&CC-AC-NUW&$\subsetneq$&Appr.11\\
+\hline
+CC-AC-UW&DC-AC-UW&INCOMP&Appr.13 + Appr.11\\
+\hline
+CC-AC-UW&DC-AC-NUW&INCOMP&Appr.13 + Appr.12\\
+\hline
+CC-AC-NUW&DC-AC-UW&INCOMP&Appr.13 + Appr.12\\
+\hline
+CC-AC-NUW&DC-AC-NUW&INCOMP&Appr.13 + Appr.12\\
+\hline
+DC-AC-UW&DC-AC-NUW&$\supsetneq$&Appr.11\\
+\hline
+CC-DC-UW&CC-DC-NUW&$\subsetneq$&Appr.14\\
+\hline
+CC-DC-UW&CC-DV-UW&INCOMP&Appr.15 + Appr.19\\
+\hline
+CC-DC-UW&CC-DV-NUW&INCOMP&Appr.20 + Appr.14\\
+\hline
+CC-DC-UW&DC-DC-UW&INCOMP&Appr.23 + Appr.14\\
+\hline
+CC-DC-UW&DC-DC-NUW&INCOMP${}^*$&Appr.10\\
+\hline
+CC-DC-UW&DC-DV-UW&INCOMP&Appr.23 + Appr.14\\
+\hline
+CC-DC-UW&DC-DV-NUW&INCOMP${}^*$&Appr.10\\
+\hline
+CC-DC-NUW&CC-DV-UW&INCOMP&Appr.14 + Appr.21\\
+\hline
+CC-DC-NUW&CC-DV-NUW&INCOMP&Appr.16 + Appr.20\\
+\hline
+CC-DC-NUW&DC-DC-UW&INCOMP&Appr.23 + Appr.16\\
+\hline
+CC-DC-NUW&DC-DC-NUW&INCOMP${}^*$&Appr.29\\
+\hline
+CC-DC-NUW&DC-DV-UW&INCOMP${}^*$&Appr.29\\
+\hline
+CC-DC-NUW&DC-DV-NUW&INCOMP${}^*$&Appr.29\\
+\hline
+CC-DV-UW&CC-DV-NUW&$\subsetneq$&Appr.14\\
+\hline
+CC-DV-UW&DC-DC-UW&INCOMP&Appr.23 + Appr.14\\
+\hline
+CC-DV-UW&DC-DC-NUW&INCOMP&Appr.23 + Appr.16\\
+\hline
+CC-DV-UW&DC-DV-UW&INCOMP&Appr.23 + Appr.14\\
+\hline
+CC-DV-UW&DC-DV-NUW&INCOMP&Appr.23 + Appr.16\\
+\hline
+CC-DV-NUW&DC-DC-UW&INCOMP&Appr.23 + Appr.17\\
+\hline
+CC-DV-NUW&DC-DC-NUW&INCOMP${}^*$&Appr.29\\
+\hline
+CC-DV-NUW&DC-DV-UW&INCOMP&Appr.23 + Appr.17\\
+\hline
+CC-DV-NUW&DC-DV-NUW&INCOMP${}^*$&Appr.29\\
+\hline
+DC-DC-UW&DC-DC-NUW&$\supsetneq$&Appr.14\\
+\hline
+DC-DC-UW&DC-DV-UW&$\subsetneq$&Theorem~\ref{t:approval-dc-unique-warp} + Appr.18\\
+\hline
+DC-DC-UW&DC-DV-NUW&INCOMP&Appr.14 + Appr.22\\
+\hline
+DC-DC-NUW&DC-DV-UW&$\subsetneq$&Corollary~\ref{c:unique-warp-dc-nuw-dv-uw} + Appr.18\\
+\hline
+DC-DC-NUW&DC-DV-NUW&$\subsetneq$&Theorem~\ref{t:approval-dc-unique-warp} + Appr.19\\
+\hline
+DC-DV-UW&DC-DV-NUW&$\supsetneq$&Appr.14\\
+\hline
+CC-AV-UW&CC-AV-NUW&$\subsetneq$&Appr.24\\
+\hline
+CC-AV-UW&DC-AV-UW&INCOMP&Appr.25 + Appr.24\\
+\hline
+CC-AV-UW&DC-AV-NUW&INCOMP&Appr.25 + Appr.24\\
+\hline
+CC-AV-NUW&DC-AV-UW&INCOMP&Appr.25 + Appr.26\\
+\hline
+CC-AV-NUW&DC-AV-NUW&INCOMP&Appr.25 + Appr.26\\
+\hline
+DC-AV-UW&DC-AV-NUW&$\supsetneq$&Appr.27\\
+\hline
+CC-UAC-UW&CC-UAC-NUW&$\subsetneq$&Appr.30\\
+\hline
+CC-UAC-UW&DC-UAC-UW&INCOMP&Appr.28 + Appr.24\\
+\hline
+CC-UAC-UW&DC-UAC-NUW&INCOMP&Appr.28 + Appr.24\\
+\hline
+CC-UAC-NUW&DC-UAC-UW&INCOMP&Appr.28 + Appr.24\\
+\hline
+CC-UAC-NUW&DC-UAC-NUW&INCOMP&Appr.28 + Appr.24\\
+\hline
+DC-UAC-UW&DC-UAC-NUW&$\supsetneq$&Appr.30\\
+\hline
+\end{longtable}
