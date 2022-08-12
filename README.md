@@ -39,11 +39,11 @@ An example run would be
 
 # Verification of Human-Generated Examples
 
-To aid us in the verification of human-generated examples, we wrote a script
-that takes as input our examples in JSON format.
-For convenience, the directory `jsons_of_examples` already contains each of our examples in JSON format.
-To regenerate those JSON files,
-make sure that the following two directories are present: 
+To aid us in the verification of human-generated examples, we wrote a script 
+that takes as input our examples in JSON format. For convenience, the directory 
+`jsons_of_examples` already contains each of our examples in JSON format. To 
+regenerate those JSON files, make sure that the following two directories are 
+present: 
 (1) `texsrc` and (2) `jsons_of_examples`.
 Then to generate them, simply run the script `latex_to_json.py` using Python 3.
 
