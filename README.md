@@ -47,3 +47,11 @@ make sure that the following two directories are present:
 (1) `texsrc` and (2) `jsons_of_examples`.
 Then to generate them, simply run the script `latex_to_json.py` using Python 3.
 
+To check the JSON examples versus the claims in each entry in the tables for 
+plurality, veto, and approval, we provide a Julia script. For example, to check 
+all the claims in the plurality table you can run
+
+$ julia CheckAll.jl texsrc/tbl-plurality.tex jsons_of_examples/
+
+The script will stop if it ever finds a claim that is not shown by the 
+example(s) in the same row.

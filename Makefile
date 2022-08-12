@@ -1,10 +1,13 @@
-all: Plur.25.json Plur.26.json Plur.47.json Plur.48.json Plur.49.json Plur.50.json Veto.43.json veto veto.json
+all: Plur.4.json Plur.25.json Plur.26.json Plur.47.json Plur.48.json Plur.49.json Plur.50.json Veto.43.json veto veto.json
 
 veto:
 	g++ -o veto main.cpp
 
 veto.json: veto
 	./veto > veto.json
+
+Plur.4.json:
+	python3 examples.py plurality 4 -n CC-RPC-TE-UW -i CC-RPC-TP-UW -s 1660159488460278524 | tail -1 > Plur.4.json
 
 Plur.25.json:
 	python3 examples.py plurality 6 -N 7 -s 1658788009515158060 -i DC-RPC-TE-NUW -i DC-RPC-TP-NUW -i DC-PC-TP-UW -n DC-PV-TP-UW -n DC-PV-TE-UW | tail -1 > Plur.25.json
@@ -28,5 +31,5 @@ Veto.43.json:
 	python3 examples.py veto 4 -N 6 -s 1659636527763808600 -i DC-RPC-TP-UW -n DC-PC-TP-UW | tail -1 > Veto.43.json
 
 clean:
-	rm -f Plur.25.json Plur.26.json Plur.47.json Plur.48.json Plur.49.json Plur.50.json Veto.43.json veto veto.json
+	rm -f Plur.4.json Plur.25.json Plur.26.json Plur.47.json Plur.48.json Plur.49.json Plur.50.json Veto.43.json veto veto.json
 
