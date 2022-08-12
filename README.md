@@ -1,14 +1,14 @@
 This repository reproduces all the examples in the paper "Separating and 
 Collapsing Electoral Control Types" that were computer-generated.
 
-= Requirements =
+# Requirements
 - A C++ compiler (e.g., GCC <http://gcc.gnu.org>)
 - Python 3 <https://www.python.org/>
 - Make (e.g., GNU Make <https://www.gnu.org/software/make/>)
 
-= Instructions =
+# Instructions
 
-$ make all
+    $ make all
 
 will reproduce all examples. These are stored as JSON files, each having a field 
 "V" that is a list of lists. Each list should be interpreted as a linear order 
@@ -19,7 +19,7 @@ should match the "C" and "V" fields of its corresponding sample file. The sample
 files were generated on a single Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz 
 running Linux 5.18.9 with 16 GB or RAM.
 
-= Checker =
+# Checker
 
 The Python scripts that generate random examples will output a witness (a 
 candidate and a partition of voters/candidates) for each control type the 
@@ -34,13 +34,15 @@ type. The requirements to run this checker are:
 
 An example run would be
 
-$ julia Control.jl <plurality|veto> <JSON file> CC-RPC-TP-UW CC-PC-TE-NUW
+    $ julia Control.jl <plurality|veto> <JSON file> CC-RPC-TP-UW CC-PC-TE-NUW
 
 
-== Verification of Human-Generated Examples ==
+# Verification of Human-Generated Examples
 
 To aid us in the verification of human-generated examples, we wrote a script
-that takes as input our examples in JSON format. To generate those JSON files, 
+that takes as input our examples in JSON format.
+For convenience, the directory `jsons_of_examples` already contains each of our examples in JSON format.
+To regenerate those JSON files,
 make sure that the following two directories are present: 
 (1) `texsrc` and (2) `jsons_of_examples`.
 Then to generate them, simply run the script `latex_to_json.py` using Python 3.

@@ -20,7 +20,7 @@ class Control:
 
 def powerset(iterable):
     s = list(iterable)
-    return itertools.chain.from_iterable(itertools.combinations(s, r) for r in range(len(s)+1))
+    return itertools.chain.from_iterable(itertools.combinations(s, r) for r in range(len(s) + 1))
 
 
 def mask(profile, candidates):
@@ -97,7 +97,8 @@ def candidate_partition_winners(election_system, candidates, profile, tie, model
     overall = collections.defaultdict(list)
     for subset1 in powerset(candidates):
         w1 = subelection(election_system, profile, subset1, tie)
-        current = finalround(election_system, profile, set(w1) | set([p for p in candidates if p not in subset1]), model)
+        current = finalround(election_system, profile, set(w1) | set([p for p in candidates if p not in subset1]),
+                             model)
         for w in current:
             overall[w].append(subset1)
     return overall
@@ -172,7 +173,7 @@ def parse_function(cname):
             print("This is not a partition control type, ignoring %s" % cname)
 
     if parts[2] == "TE":
-        TP  = False
+        TP = False
     elif parts[2] == "TP":
         TP = True
     else:
@@ -222,13 +223,15 @@ def search_example(election_system, ncandidates, inset, notinset, N, seed):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Find examples of plurality control instances that are in some sets but not in others")
+    parser = argparse.ArgumentParser(
+        description="Find examples of plurality control instances that are in some sets but not in others")
     parser.add_argument("election_system", choices=["plurality", "veto"], help="Election system")
     parser.add_argument("ncandidates", type=int, help="Number of candidates")
     parser.add_argument("--votes", "-N", type=int, help="Number of random votes (picked with replacement)")
     parser.add_argument("--seed", "-s", type=int, help="Random seed")
     parser.add_argument("--inset", "-i", help="Find an example in this control type", action="append", default=[])
-    parser.add_argument("--notinset", "-n", help="Find an example not in this control type", action="append", default=[])
+    parser.add_argument("--notinset", "-n", help="Find an example not in this control type", action="append",
+                        default=[])
     opt = parser.parse_args()
     seed = time.time_ns()
 
@@ -242,10 +245,18 @@ if __name__ == "__main__":
     elapsed = time.process_time() - start
 
     if res is not None:
-        V, w, witnesses  = res
+        V, w, witnesses = res
         print("%s %s" % (w, witnesses))
         print("|V|=", len(V))
         pretty_print(V)
-        print(json.dumps({"C": opt.ncandidates, "V": V, "version": "1.0", "date": datetime.datetime.utcnow().ctime(), "elapsedTime": elapsed}))
+        print(json.dumps({
+            "name": "",  # AFAIK there is not such info in this script
+            "C": opt.ncandidates,
+            "S": 0,
+            "V": V,
+            "U": [],
+            "k": 0, "version": "1.0",
+            "date": datetime.datetime.utcnow().ctime(),
+            "elapsedTime": elapsed}))
     else:
         sys.exit(1)
