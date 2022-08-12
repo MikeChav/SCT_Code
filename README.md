@@ -51,7 +51,7 @@ To check the JSON examples versus the claims in each entry in the tables for
 plurality, veto, and approval, we provide a Julia script. For example, to check 
 all the claims in the plurality table you can run
 
-$ julia CheckAll.jl texsrc/tbl-plurality.tex jsons_of_examples/
+    $ julia CheckAll.jl texsrc/tbl-plurality.tex jsons_of_examples/
 
 The script will stop if it ever finds a claim that is not shown by the 
 example(s) in the same row.
