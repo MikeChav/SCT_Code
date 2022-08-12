@@ -14,10 +14,10 @@ will reproduce all examples. These are stored as JSON files, each having a field
 "V" that is a list of lists. Each list should be interpreted as a linear order 
 of the candidates, i.e., a vote.
 
-Sample files are provided in the examples folder, and each generated example 
-should match the "C" and "V" fields of its corresponding sample file. The sample 
-files were generated on a single Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz 
-running Linux 5.18.9 with 16 GB or RAM.
+Sample files are provided in the `computer_generated_examples` folder, and each 
+generated example  should match the "C" and "V" fields of its corresponding 
+sample file. The sample files were generated on a single Intel(R) Core(TM) 
+i7-9750H CPU @ 2.60GHz running Linux 5.18.9 with 16 GB or RAM.
 
 # Checker
 
