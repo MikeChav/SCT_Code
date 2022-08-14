@@ -1,7 +1,7 @@
 all: Plur.4.json Plur.25.json Plur.26.json Plur.47.json Plur.48.json Plur.49.json Plur.50.json Veto.16.json Veto.43.json
 
 veto:
-	g++ -o veto -O2 main.cpp
+	g++ -std=c++17 -o veto -O2 main.cpp
 
 Veto.16.json: veto
 	./veto >  Veto.16.json
