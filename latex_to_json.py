@@ -39,7 +39,7 @@ def parse_from_tex():
         with open("texsrc/{}texsrc".format(t), 'r') as f:
             for line in f:
                 count += 1
-                line = del_items(line, ["$", " ", "\n", "\\", "hline", "-", "allowbreak", "{}", "-", "^ddagger", "^dagger"]).split('&')
+                line = del_items(line, ["$", " ", "\n", "\\", "hline", "-", "allowbreak", "{}", "-", "^ddagger", "^dagger", "emptyset"]).split('&')
                 C = line[1].split(",")
                 S = line[2].split(",") if len(line[2]) > 0 else []
                 V = reformat_votes(line[3], t)
