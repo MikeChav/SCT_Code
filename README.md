@@ -117,9 +117,10 @@ all the claims in the plurality table it suffices to run
 
 The script will stop when it finds an incorrect row in the input table and will declare that row incorrect.
 It is true that running this script provides a way to verify computer-generated examples. However,
-when verifying a single computer-generated example, it is easier to use `Control.jl` as the argument
-to that script allows the user verify if a given example is a witness for the separation between two
-specified (as part of the arguments provided to `Control.jl`) control types).
+when verifying a single computer-generated example, it is easier to use `Control.jl` as the arguments
+to that script allow the user to specify an example and two control types, and thus it makes it easier to
+verify if a given example is a witness for the separation between two
+specified (as part of the arguments provided to `Control.jl`) control types.
 
 ## Runtimes
 
