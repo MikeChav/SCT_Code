@@ -117,6 +117,6 @@ the separation between two specific control types, for a given election system).
 
 ## Runtimes
 
-- The time taken to verify the plurality table was 4.568 CPU seconds.
-- The time taken to verify the veto table was 2.977 CPU seconds.
-- The time taken to verify the approval table was 4.998 CPU seconds.
+- The time taken to verify the plurality table was 4.474 CPU seconds.
+- The time taken to verify the veto table was 2.241 CPU seconds.
+- The time taken to verify the approval table was 4.991 CPU seconds.
