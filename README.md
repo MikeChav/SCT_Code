@@ -16,7 +16,7 @@ LaTeX source (taken from our paper) and included in the directory
 "Verification of Human-Generated Examples."
 
 
-**Current Version: 2022-08-14 12:50**
+**Current Version: 2022-08-14 19:30**
 
 # Computer-Generated Examples
 
