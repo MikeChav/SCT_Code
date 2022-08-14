@@ -30,7 +30,7 @@ LaTeX source (taken from our paper) and included in the directory
     $ make all
 
 will reproduce the nine examples. These are stored as JSON files, which are 
-output into the root directory of the repository.4.998
+output into the root directory of the repository.
 
 Each JSON file has a "C" field, which is the number of candidates, and a "V" 
 field, which is a list of lists that should be interpreted as a list of linear 
