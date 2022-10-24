@@ -12,11 +12,12 @@ This repository also provides all our separation examples in JSON
 format. These are generated using the `latex_to_json.py` script
 included in this repository, and the input to that script is the 
 LaTeX source (taken from our paper) and included in the directory
-`texsrc` in this repository. More details are provided in Section
+`texsrc` in this repository. More details are provided 
+below in section
 "Verification of Human-Generated Examples."
 
 
-**Current Version: 2022-08-14 19:30**
+**Current Version: 2022-10-24 13:57**
 
 # Computer-Generated Examples
 
