@@ -244,7 +244,7 @@ function av(E, C, V::Vector{Vector{Char}}, U::Vector{Vector{Char}}, k, ctype::Co
 
     for i=0:k
         for j in IterTools.subsets(eachindex(U), i)
-            winners = E(C, ∪(V, U[j]), w)
+            winners = E(C, append!(V, U[j]), w)
 
             if ctype == CC
                 for c in winners
